@@ -84,3 +84,11 @@ h1 {
     margin-bottom: 15px;
     font-family: "BBH Sans Bogle", sans-serif;
 }
+
+.profile-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+    color: black;
+}

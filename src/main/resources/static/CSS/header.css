@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
 
-
 .header {
     background: white;
     border-bottom: 1px solid #e0e0e0;
@@ -49,6 +48,7 @@
 .header .auth-links {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .header .login-btn {
@@ -83,6 +83,40 @@
     color: black;
 }
 
+/* Стили для аватара пользователя */
+.user-avatar {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.avatar-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #31354d 0%, #eeeeee 100%);
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "BBH Sans Bogle", sans-serif;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.avatar-circle:hover {
+    transform: scale(1.1);
+    border-color: #4a4b54;
+    box-shadow: 0 4px 12px rgba(134, 143, 184, 0.3);
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .header nav {
@@ -97,5 +131,11 @@
 
     .header .auth-links {
         gap: 10px;
+    }
+
+    .avatar-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
     }
 }

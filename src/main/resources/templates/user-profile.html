@@ -1,10 +1,87 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Profile - DDNet</title>
+    <link rel="stylesheet" th:href="@{/CSS/header.css}">
+    <link rel="stylesheet" th:href="@{/CSS/profile.css}">
 </head>
 <body>
+<!-- Шапка -->
+<header class="header">
+    <nav>
+        <div class="nav-links">
+            <a th:href="@{/home}">Home</a>
+            <a th:href="@{/user-profile}">Profile</a>
+            <a th:href="@{/settings}">Settings</a>
+        </div>
 
+        <div class="auth-links">
+            <a th:href="@{/logout}" class="login-btn">Logout</a>
+        </div>
+    </nav>
+</header>
+
+<!-- Контент профиля -->
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>My Profile</h1>
+        <p>Manage your account and view your activity</p>
+    </div>
+
+    <!-- Основная информация -->
+    <div class="profile-info">
+        <div class="avatar-section">
+            <div class="avatar">
+                <!-- Будет аватар пользователя -->
+                <span th:text="${user.firstName?.substring(0,1)} + ${user.lastName?.substring(0,1)}">JD</span>
+            </div>
+            <button class="change-avatar-btn">Change Avatar</button>
+        </div>
+
+        <div class="user-details">
+            <div class="detail-group">
+                <label>Name</label>
+                <div class="value" th:text="${user.firstName}">John</div>
+            </div>
+
+            <div class="detail-group">
+                <label>SurName</label>
+                <div class="value" th:text="${user.lastName}">Doe</div>
+            </div>
+
+            <div class="detail-group">
+                <label>Email</label>
+                <div class="value" th:text="${user.email}">john@example.com</div>
+            </div>
+
+            <div class="detail-group">
+                <label>Member Since</label>
+                <div class="value" th:text="${user.createdAt}">2024-01-01</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Статистика -->
+    <div class="profile-stats">
+        <div class="stat-item">
+            <span class="stat-number" th:text="${postCount}">0</span>
+            <span class="stat-label">Posts</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" th:text="${likeCount}">0</span>
+            <span class="stat-label">Likes</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number" th:text="${commentCount}">0</span>
+            <span class="stat-label">Comments</span>
+        </div>
+    </div>
+
+    <!-- Действия -->
+    <div class="profile-actions">
+        <a th:href="@{/settings}" class="action-btn primary">Edit Profile</a>
+        <a th:href="@{/home}" class="action-btn">Back to Home</a>
+    </div>
+</div>
 </body>
 </html>

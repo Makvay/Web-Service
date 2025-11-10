@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Хуй</title>
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/CSS/header.css}">
+    <link rel="stylesheet" th:href="@{/CSS/posts.css}">
+    <link rel="stylesheet" th:href="@{/CSS/form.css}">
 </head>
 <body>
+<header class="header">
+    <nav>
+        <div class="nav-links">
+            <a th:href="@{/home}">Never</a>
+            <a th:href="@{/create}" class="create-post-btn">Create Post</a>
+        </div>
+        <div class="auth-links">
+            <!-- Аватар для авторизованного пользователя -->
+            <div th:if="${session.currentUser != null}" class="user-avatar">
+                <a th:href="@{/user-profile}" class="avatar-link">
+                    <div class="avatar-circle">
+                        <span th:text="${session.currentUser.firstName?.substring(0,1)} + ${session.currentUser.lastName?.substring(0,1)}">JD</span>
+                    </div>
+                </a>
+            </div>
 
+            <!-- Кнопки для неавторизованного пользователя -->
+            <div th:unless="${session.currentUser != null}">
+                <a th:href="@{/user-login}" class="login-btn">Sign In</a>
+                <a th:href="@{/user-regist}" class="register-btn">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="content">
+
+
+    <!-- Посты -->
+    <div th:each="post : ${posts}">
+        <div class="post">
+            <h3 th:text="${post.author.firstName} + ' ' + ${post.author.lastName}">Author</h3>
+            <h4 th:text="${post.title}" style="margin: 10px 0; color: #333; font-size: 20px;">Post Title</h4>
+            <p th:text="${post.content}">Post content</p>
+            <small th:text="${#temporals.format(post.createdAt, 'dd MMMM yyyy, HH:mm')}">Date</small>
+        </div>
+    </div>
+
+    <!-- Если постов нет -->
+    <div th:if="${#lists.isEmpty(posts)}" class="empty-state">
+        <p>No posts yet. Be the first to post!</p>
+    </div>
+</div>
 </body>
 </html>
