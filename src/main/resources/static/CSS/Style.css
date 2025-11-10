@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
+
+body {
+    font-family: "BBH Sans Bogle", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 75px;
+    margin-top: 50px;
+}
+
+.header ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+    margin: 0;
+    padding: 10px 50px;
+    list-style: none;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+.form-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: black;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: "BBH Sans Bogle", sans-serif;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: green;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: "BBH Sans Bogle", sans-serif;
+}
+.error-message {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: "BBH Sans Bogle", sans-serif;
+}

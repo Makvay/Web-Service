@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&display=swap');
+
+/* Общие стили для страницы профиля */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: "BBH Sans Bogle", sans-serif;
+}
+
+/* Заголовок профиля */
+.profile-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.profile-header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.profile-header p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Аватар и основная информация */
+.profile-info {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: flex-start;
+}
+
+.avatar-section {
+    text-align: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: #999;
+    margin-bottom: 15px;
+    border: 3px solid black;
+}
+
+.change-avatar-btn {
+    padding: 8px 16px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "BBH Sans Bogle", sans-serif;
+    transition: all 0.3s;
+}
+
+.change-avatar-btn:hover {
+    background: black;
+    color: white;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.detail-group {
+    margin-bottom: 20px;
+}
+
+.detail-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.detail-group .value {
+    font-size: 16px;
+    color: #666;
+    padding: 8px 0;
+}
+
+/* Статистика */
+.profile-stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+    justify-content: center;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background: white;
+    min-width: 120px;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Действия профиля */
+.profile-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.action-btn {
+    padding: 12px 24px;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: "BBH Sans Bogle", sans-serif;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.action-btn:hover {
+    background: black;
+    color: white;
+}
+
+.action-btn.primary {
+    background: black;
+    color: white;
+}
+
+.action-btn.primary:hover {
+    background: white;
+    color: black;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .profile-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-stats {
+        flex-wrap: wrap;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .action-btn {
+        width: 200px;
+        text-align: center;
+    }
+}
