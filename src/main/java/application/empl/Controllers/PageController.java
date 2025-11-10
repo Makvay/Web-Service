@@ -99,7 +99,7 @@ public class PageController {
 
     @GetMapping("/user-regist")
     public String getUserRegist(Model model) {
-        model.addAttribute("registrationRequest", new UserRegistrationRequest());
+        model.addAttribute("userRegistrationRequest", new UserRegistrationRequest());
 
         return "user-regist";
     }
