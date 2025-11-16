@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Profile - DDNet</title>
+    <title>Profile</title>
     <link rel="stylesheet" th:href="@{/CSS/header.css}">
     <link rel="stylesheet" th:href="@{/CSS/profile.css}">
 </head>
@@ -35,28 +35,28 @@
                 <!-- Будет аватар пользователя -->
                 <span th:text="${user.firstName?.substring(0,1)} + ${user.lastName?.substring(0,1)}">JD</span>
             </div>
-            <button class="change-avatar-btn">Change Avatar</button>
+
         </div>
 
         <div class="user-details">
             <div class="detail-group">
                 <label>Name</label>
-                <div class="value" th:text="${user.firstName}">John</div>
+                <div class="value" th:text="${user.firstName}"></div>
             </div>
 
             <div class="detail-group">
                 <label>SurName</label>
-                <div class="value" th:text="${user.lastName}">Doe</div>
+                <div class="value" th:text="${user.lastName}"></div>
             </div>
 
             <div class="detail-group">
                 <label>Email</label>
-                <div class="value" th:text="${user.email}">john@example.com</div>
+                <div class="value" th:text="${user.email}"></div>
             </div>
 
             <div class="detail-group">
                 <label>Member Since</label>
-                <div class="value" th:text="${user.createdAt}">2024-01-01</div>
+                <div class="value" th:text="${user.createdAt}"></div>
             </div>
         </div>
     </div>

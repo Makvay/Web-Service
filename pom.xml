@@ -10,7 +10,7 @@
     </parent>
     <groupId>application</groupId>
     <artifactId>EMPL</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1</version>
     <name>EMPL</name>
     <description>EMPL</description>
     <url/>
