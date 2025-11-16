@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories("application.empl.Repo") // Добавляем эту строку
-@EntityScan("application.empl.Entites")
+@EntityScan("application.empl.Entities")
 public class EmplApplication {
 
     public static void main(String[] args) {
